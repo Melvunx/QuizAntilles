@@ -1,7 +1,43 @@
+@font-face {
+  font-family: "Exo";
+  src: url(../../assets/fonts/Exo2-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Dosis";
+  src: url(../../assets/fonts/Dosis-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Caveat";
+  src: url(../../assets/fonts/Caveat-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../../assets/fonts/InterTight-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Oxygen";
+  src: url(../../assets/fonts/Oxygen-Regular.ttf);
+}
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   list-style: none;
+}
+
+body {
+  font-family: "Inter";
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: 550;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

@@ -1,9 +1,75 @@
+$colorB1: #000;
+$regularColor: #532929;
+$colorW1: #fff;
+$navbarColor: rgb(87, 24, 69);
+$colorCard: #ffffffa5;
+$regularTransition: all 0.3s ease-out;
 
+@font-face {
+  font-family: "Exo";
+  src: url(../../assets/fonts/Exo2-VariableFont_wght.ttf);
+}
 
+@font-face {
+  font-family: "Dosis";
+  src: url(../../assets/fonts/Dosis-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Caveat";
+  src: url(../../assets/fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../../assets/fonts/InterTight-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Oxygen";
+  src: url(../../assets/fonts/Oxygen-Regular.ttf);
+}
+
+$fontCav: "Caveat";
+$fontOxy: "Oxygen";
+$fontInt: "Inter";
+$fontDos: "Dosis";
+$fontExo: "Exo";
+
+@mixin flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin colunmContainer {
+  @include flexContainer;
+  flex-direction: column;
+}
+
+@mixin regularFont {
+  font-family: $fontInt;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: 550;
+}
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style: none;
+}
+
+body {
+  @include regularFont;
+}
+
+a {
+  text-decoration: none;
+  color: $colorB1;
+}
+
+button {
+  cursor: pointer;
 }

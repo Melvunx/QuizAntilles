@@ -9,123 +9,118 @@
   </head>
   <body>
     <header>
-      <div class="TopBand">
-        <img id="imgTop" src="./public/img/Top.jpg" alt="Fond" />
-        <nav class="crumbs">
-          <ol>
-            <li class="crumb">Information |</li>
-            <li class="crumb">
-              <a href="home.html">Accueil</a>
-            </li>
-            <li class="crumb"><a href="Quiz.html">Quiz</a></li>
-            <li class="crumb"><a href="about.html">Information</a></li>
-          </ol>
-        </nav>
+      <nav>
+        <a href="./home.html"
+          ><h2>Quiz'Antilles<i class="fa-solid fa-umbrella-beach"></i></h2
+        ></a>
+        <ul class="link">
+          <li><a href="./quiz.html">Quiz</a></li>
+          <li><a href="./about.html">A propos</a></li>
+        </ul>
+      </nav>
+      <div class="header-container">
+        <div class="header-content">
+          <h1>Bienvenue sur Quiz'Antilles !</h1>
+          <h4>Apprennez en plus sur les Antilles françaises !</h4>
+        </div>
       </div>
     </header>
-    <section class="section-container">
-      <div>
-        <h2>La carte de la Martinique</h2>
-        <img
-          class="imgMada"
-          src="./public/img/carte_martinique-1.png"
-          alt="imgMartinique"
-        />
-        <fieldset class="boxInfo">
-          <legend class="legendInfo">La Martinique</legend>
-          <p>
-            Pour suivre les infos locales, voici la
-            <a
-              class="text-gras"
-              href="https://la1ere.francetvinfo.fr/martinique/"
-              >chaîne officielle d'information en Martinique</a
-            >. Voici un autre
-            <a class="text-gras" href="https://viaatv.tv/">site web viaATV</a>
-            pour compléter la chaîne officielle d'information.<br />
-            <br />
-            La Martinique, appelée aussi l'île au fleur est située aux Petites
-            Antilles. Cette île de 347 686 habitants d'après le dernier
-            recensement en 2023, département de France, attire de nombreux
-            touristes comme son île sœur la Guadeloupe.<br />
-            Une terrible éruption est survenu le 8 mai 1902, elle fit 30 000
-            morts et marqua la capital économique de l'époque, Saint-Pierre.
-            <br />
-            L'île au fleur rayonne par sa culture comme le Carnaval, le bèlè,
-            une danse traditionnelle, ses paysages ainsi que sa nourriture comme
-            le colombo de poulet, chatrou etc.<br />
-            <br />
-            Pour en savoir plus sur la culture martiniquaise,
-            <a
-              class="text-gras"
-              href="https://www.martinique.franceantilles.fr/"
-              >le france-antilles Martinique</a
-            >
-            sera votre meilleur ami.
-          </p>
-          <img
-            class="textImg"
-            src="./public/img/Flag-of-Martinique.svg.png"
-            alt="drpMat"
-          />
-          <p class="text-gras">Le drapeau de la Martinique</p>
-        </fieldset>
-        <h2>La carte de la Guadeloupe</h2>
-        <img
-          class="imgGwada"
-          src="./public/img/carte-guadeloupe-papillon.jpg"
-          alt="imgGuadeloupe"
-        />
-        <fieldset class="boxInfo">
-          <legend class="legendInfo">La Guadeloupe</legend>
-          <p>
-            Pour suivre les infos locales, voici la
-            <a
-              class="text-gras"
-              href="https://la1ere.francetvinfo.fr/guadeloupe/"
-              >chaîne officielle d'information en Guadeloupe</a
-            >. <br />
-            <br />
-            La Guadeloupe est elle aussi située aux Petites Antilles. Cette île,
-            peuplée de 375 845 habitants en 2023, est séparée en 2 grandes îles
-            appélées Basse-Terre à l'Ouest et Grande-Terre à l'Est. La
-            Guadeloupe n'est pas la seule île des environs ; à proximité se
-            trouve l'île de Marie-Galante, la Désirade ainsi que les Saintes.
-            <br />
-            La Guadeloupe possède elle aussi sa propre culture comme le Gwoka,
-            danse traditionnelle, la crêpe poisson etc. Elle est en compétition
-            avec la Martinique pour ses plages et ses lieux-dits mais la
-            Guadeloupe possède de nombreux charmes comme la Souffrière, ses
-            rivières etc. <br />
-            La capital économique de la Guadeloupe est Point-à-Pitre.<br />
-            <br />
-            À l'instar de la Martinique, pour en savoir plus sur la culture
-            guadeloupéenne,
-            <a href="https://www.guadeloupe.franceantilles.fr/"
-              >le france-antilles Guadeloupe</a
-            >
-            vous sera d'une grande aide.
-          </p>
-          <img
-            class="textImg"
-            src="./public/img/guadeloupe-flag.webp"
-            alt="drpGwada"
-          />
-          <p class="text-gras">Le drapeau de la Guadeloupe</p>
-        </fieldset>
+
+    <main>
+      <div class="card-container">
+        <div class="card mada">
+          <div class="img-container">
+            <img src="./public/img/Flag-of-Martinique.svg.png" alt="" />
+          </div>
+          <div class="card-content">
+            <h3 class="title-card">Martinique</h3>
+            <a class="icon" href=""
+              ><i class="fa-solid fa-earth-americas"></i
+            ></a>
+            <a class="icon" href=""><i class="fa-regular fa-newspaper"></i></a>
+            <button class="map"><i class="fa-solid fa-map"></i></button>
+            <div class="paragraphe-container">
+              <p>
+                La Martinique, surnommée l'île aux fleurs, se trouve dans les
+                Petites Antilles. Avec une population de 347 686 habitants selon
+                le recensement de 2023, cette île, département français, attire
+                de nombreux touristes, tout comme sa voisine, la Guadeloupe.Elle
+                est composée de 34 communes organisées en 3 communautés
+                d'aglomération. Sa capitale est Fort-deFrance et est la ville la
+                plus peuplée de toute la Martinique.
+              </p>
+              <p>
+                Elle se distingue par sa culture, notamment le Carnaval, le
+                bèlè, une danse traditionnelle, ainsi que par ses paysages et sa
+                gastronomie, tels que le colombo de poulet et le chatrou. La
+                Martinique est également connue pour ses plages de sable blanc
+                et ses eaux cristallines. Elle est une destination prisée pour
+                les amateurs de plongée sous-marine, de voile et de surf.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card gwada">
+          <div class="img-container">
+            <img src="./public/img/flagOfGwada.png" alt="" />
+          </div>
+          <div class="card-content">
+            <h3 class="title-card">Guadeloupe</h3>
+            <a class="icon" href=""
+              ><i class="fa-solid fa-earth-americas"></i
+            ></a>
+            <a class="icon" href=""><i class="fa-regular fa-newspaper"></i></a>
+            <button class="map"><i class="fa-solid fa-map"></i></button>
+            <div class="paragraphe-container">
+              <p>
+                La Guadeloupe, également située dans les Petites Antilles,
+                compte 375 845 habitants en 2023. Elle est composée de deux
+                grandes îles : Basse-Terre à l'ouest et Grande-Terre à l'est. À
+                proximité se trouvent d'autres îles, telles que Marie-Galante,
+                La Désirade et les Saintes.
+              </p>
+              <p>
+                La Guadeloupe se distingue par sa culture, notamment le Gwoka,
+                une danse traditionnelle, et des spécialités culinaires comme la
+                crêpe poisson. Bien qu'en compétition avec la Martinique pour
+                ses plages et ses sites emblématiques, la Guadeloupe possède des
+                attraits uniques, comme la Soufrière et ses nombreuses rivières.
+                Sa capitale économique est Pointe-à-Pitre.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p id="end-page">
-        Pour tester vos connaissances générales sur les Antilles Française, vous
-        pouvez essayer notre <a class="text-gras" href="Quiz.html">Quiz !</a
-        ><br />
-        Il comporte 3 thèmes ainsi que des questions à choix multiples ! <br />
-        Bien sûr, le quiz est rapide et gratuit !
-      </p>
-    </section>
+    </main>
 
     <footer>
-      <div>
-        <img id="imgFond" src="./public/img/banderol.jpg" alt="banderole" />
-      </div>
+      <ul class="socials">
+        <h2>Mes réseaux</h2>
+        <li class="icon instagram">
+          <a href="https://www.instagram.com/melvunx/"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </li>
+        <li class="icon linkedIn">
+          <a href="https://www.linkedin.com/in/melvin-augustine/"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </li>
+        <li class="icon github">
+          <a href="https://github.com/Melvunx/"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </li>
+        <li class="icon twitter">
+          <a href="https://x.com/melvunx"
+            ><i class="fa-brands fa-square-x-twitter"></i
+          ></a>
+        </li>
+      </ul>
     </footer>
+    <script
+      src="https://kit.fontawesome.com/50bbbac735.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
