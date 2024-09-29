@@ -9,3 +9,4 @@ gwadaPopup.addEventListener(
 
 closeMada.addEventListener("click", () => (popupMada.style.display = "none"));
 closeGwada.addEventListener("click", () => (popupGwada.style.display = "none"));
+
