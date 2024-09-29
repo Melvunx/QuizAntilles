@@ -1,19 +1,6 @@
-class Question {
-  constructor(type, text, choices, answers) {
-    this.type = type;
-    this.text = text;
-    this.choices = choices;
-    this.answers = answers;
-  }
+import { questions } from "./assets/data/Question.js";
 
-  isCorrectAnswer(choice) {
-    if (this.type === "unique") {
-      return choice === this.answers;
-    } else if (this.type === "multiple") {
-      return (
-        choice.every((answer) => this.answers.includes(answer)) &&
-        this.answers.every((answer) => choice.includes(answer))
-      );
-    }
-  }
+for (const question in questions) {
+  console.log(questions[question]);
 }
+
