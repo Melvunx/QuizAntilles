@@ -147,7 +147,7 @@ const display = {
             <button id="hard">Quiz Difficile</button>
           </div>
           </div>
-        <div class="quiz-content">
+        <div class="quiz-content"style="display: flex;">
           <h2 id="question"></h2>
           <h3 id="score"></h3>
         <div class="choice-container"></div>
@@ -164,15 +164,13 @@ const display = {
       // Ré-attache les événements aux boutons de sélection de quiz
       document.getElementById("normal").addEventListener("click", () => {
         this.elementShown(displayedQuizHTML, "quiz");
-        quizContent.style.display = "flex";
         const selectedQuestions = selectNormalQuizQuestions(questions);
         startQuiz(selectedQuestions);
       });
 
       document.getElementById("hard").addEventListener("click", () => {
         this.elementShown(displayedQuizHTML, "quiz");
-        quizContent.style.display = "flex";
-        const selectedQuestions = selectedHardQuizQuestions(questions);
+        const selectedQuestions = selectHardQuizQuestions(questions);
         startQuiz(selectedQuestions);
       });
     });
