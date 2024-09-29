@@ -2,6 +2,10 @@ $colorB1: #000;
 $colorW1: #fff;
 $regularColor1: #73c2d1;
 $regularColor2: rgb(39, 94, 66);
+$regularColor3: rgb(37, 164, 37);
+$regularColor4: rgb(205, 69, 20);
+$regularColor5: gold;
+$regularColor6: salmon;
 $hoverColor1: lightblue;
 $hoverColor2: rgba(122, 119, 119, 0.44);
 $gradient1: linear-gradient(to right, #1d2b64, #26a0da);
@@ -76,6 +80,18 @@ $fontExo: "Exo";
   overflow: hidden;
 }
 
+@mixin regularBtn {
+  border: none;
+  padding: 10px 5px;
+  border-radius: 15px;
+  background: $colorW1;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: $fontExo;
+  letter-spacing: 1px;
+  transition: $regularTransition;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -121,12 +137,4 @@ main {
     width: 90%;
     bottom: 5px;
   }
-}
-
-.invisible {
-  display: none;
-}
-
-.visible {
-  display: block;
 }

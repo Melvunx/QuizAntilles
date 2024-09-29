@@ -1,5 +1,6 @@
 import { questions } from "./assets/data/Question.js";
 const startPage = document.querySelector(".start-page");
+const quizContent = document.querySelector(".quiz-content");
 
 class Quiz {
   constructor(questions) {
@@ -44,19 +45,17 @@ const display = {
     if (quiz.getCurrentQuestion().type === "unique") {
       choicesQuestion.forEach((choice, index) => {
         container.innerHTML += `
-          <li>
             <input type="radio" name="choice" id="choice${index}" value="${choice}" />
             <label for="choice${index}">${choice}</label>
-          </li>
+
         `;
       });
     } else if (quiz.getCurrentQuestion().type === "multiple") {
       choicesQuestion.forEach((choice, index) => {
         container.innerHTML += `
-          <li>
             <input type="checkbox" name="choice${index}" id="choice${index}" value="${choice}" />
             <label for="choice${index}">${choice}</label>
-          </li>
+
         `;
       });
     }
@@ -94,6 +93,7 @@ const display = {
         const selectedRadio = container.querySelector(
           "input[type='radio']:checked"
         );
+        //On met dans un tableau les réponses de l'utilisateur
         userAnswers.push(selectedRadio.value);
       } else if (quiz.getCurrentQuestion().type === "multiple") {
         container
@@ -105,7 +105,6 @@ const display = {
 
       // Envoie les réponses à getUserAnswer()
       quiz.getUserAnswer(userAnswers);
-      console.log(userAnswers, "score : " + quiz.score);
       quizApp(quiz); // Recharge la question suivante
     });
   },
@@ -127,13 +126,15 @@ const display = {
     `;
     let restartQuizzHTML = `
     <div class="quiz-intro">
-    <h2>Choisissez votre mode de quiz :</h2>
-    <button id="normal">Quiz Normal</button>
-    <button id="hard">Quiz Difficile</button>
+      <h2>Choisissez votre mode de quiz :</h2>
+      <div class="level-btn">
+        <button id="normal">Quiz Normal</button>
+        <button id="hard">Quiz Difficile</button>
+      </div>
     </div>
     <div class="quiz-content">
-    <h2 id="question"></h2>
-    <h3 id="score"></h3>
+      <h2 id="question"></h2>
+      <h3 id="score"></h3>
     <div class="choice-container"></div>
     <p id="question-number"></p>
     </div>
@@ -141,12 +142,14 @@ const display = {
     let displayedQuizHTML = `
           <div class="quiz-intro" style="display: none;">
             <h2>Choisissez votre mode de quiz :</h2>
+          <div class="level-btn">
             <button id="normal">Quiz Normal</button>
             <button id="hard">Quiz Difficile</button>
           </div>
+          </div>
         <div class="quiz-content">
-        <h2 id="question"></h2>
-        <h3 id="score"></h3>
+          <h2 id="question"></h2>
+          <h3 id="score"></h3>
         <div class="choice-container"></div>
         <p id="question-number"></p>
         </div>
@@ -161,12 +164,14 @@ const display = {
       // Ré-attache les événements aux boutons de sélection de quiz
       document.getElementById("normal").addEventListener("click", () => {
         this.elementShown(displayedQuizHTML, "quiz");
+        quizContent.style.display = "flex";
         const selectedQuestions = selectNormalQuizQuestions(questions);
         startQuiz(selectedQuestions);
       });
 
       document.getElementById("hard").addEventListener("click", () => {
         this.elementShown(displayedQuizHTML, "quiz");
+        quizContent.style.display = "flex";
         const selectedQuestions = selectedHardQuizQuestions(questions);
         startQuiz(selectedQuestions);
       });
@@ -206,7 +211,7 @@ const selectNormalQuizQuestions = (questions) => {
     remainingQuestions.splice(randomIndex, 1); // Supprimer pour éviter les doublons
   }
 
-  // Mélanger l'ordre des questions sélectionnées
+  // les questions sont rangées aléatoirement
   return selectedQuestions.sort(() => Math.random() - 0.5);
 };
 
@@ -225,13 +230,15 @@ const startQuiz = (questions) => {
 normal.addEventListener("click", () => {
   const selectedQuestions = selectNormalQuizQuestions(questions);
   startQuiz(selectedQuestions);
-  startPage.classList.add("invisible");
+  startPage.style.display = "none";
+  quizContent.style.display = "flex";
 });
 
 hard.addEventListener("click", () => {
   const selectedQuestions = selectHardQuizQuestions(questions);
   startQuiz(selectedQuestions);
-  startPage.classList.add("invisible");
+  startPage.style.display = "none";
+  quizContent.style.display = "flex";
 });
 
 // Fonction de chargement du quiz

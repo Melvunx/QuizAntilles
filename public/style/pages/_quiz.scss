@@ -1,0 +1,257 @@
+.quiz-container {
+  @include flexContainer;
+  min-height: 90vh;
+
+  #quiz {
+    min-height: 50vh;
+    @include flexContainer;
+
+    .start-page {
+      @include regularCard;
+      @include colunmContainer;
+      padding: 55px 45px;
+      justify-content: space-evenly;
+      min-height: 50vh;
+      min-width: 800px;
+
+      h1,
+      h3 {
+        font-family: $fontOxy;
+      }
+
+      h3 {
+        letter-spacing: 1px;
+        font-size: 1.3rem;
+      }
+
+      #quiz-option {
+        @include colunmContainer;
+        gap: 15px;
+
+        button {
+          @include regularBtn;
+          color: $colorW1;
+
+          &:first-of-type {
+            background: $regularColor3;
+
+            &:hover {
+              background: $colorW1;
+              color: $regularColor3;
+              transform: scale(1.1);
+            }
+
+            &:active {
+              transform: scale(0.9);
+            }
+          }
+
+          &:last-of-type {
+            background: orangered;
+
+            &:hover {
+              background: $colorW1;
+              color: $regularColor4;
+              transform: scale(1.1);
+            }
+
+            &:active {
+              transform: scale(0.9);
+            }
+          }
+        }
+      }
+    }
+
+    .quiz-content {
+      @include colunmContainer;
+      @include regularCard;
+      position: relative;
+      justify-content: space-evenly;
+      min-height: 55vh;
+      min-width: 1000px;
+      display: none;
+      gap: 5px;
+
+      h2#question {
+        font-family: $fontOxy;
+        font-size: 1.6rem;
+        width: 80%;
+        margin: $marginCenter;
+        text-align: center;
+        line-height: 40px;
+      }
+
+      .choice-container {
+        @include flexContainer;
+        justify-content: space-evenly;
+        width: 90%;
+        gap: 5px;
+        margin-bottom: 25px;
+
+        input[type="radio"],
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        input[type="radio"]:checked + label,
+        input[type="checkbox"]:checked + label {
+          transition: $regularTransition;
+          border-radius: 10px;
+          font-weight: 600;
+          color: $colorW1;
+          padding: 10px;
+        }
+        input[type="radio"]:checked + label {
+          background: $regularColor5;
+        }
+
+        input[type="checkbox"]:checked + label {
+          background: $regularColor6;
+        }
+
+        label {
+          transition: $regularTransition;
+          font-family: $fontExo;
+          border-radius: 10px;
+          font-size: 1.2rem;
+          cursor: pointer;
+          padding: 10px;
+          text-align: center;
+          line-height: 30px;
+          width: 25%;
+
+          &::selection {
+            background: none;
+          }
+
+          &:hover {
+            background: $hoverColor1;
+            transform: scale(1.05);
+          }
+
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+
+        button {
+          position: absolute;
+          border: none;
+          border-radius: 12px;
+          padding: 6px 12px;
+          background: $colorW1;
+          font-size: 1.05rem;
+          font-family: $fontOxy;
+          transition: $regularTransition;
+          top: 65%;
+          font-weight: 600;
+          letter-spacing: 1px;
+
+          &:hover {
+            background: $regularColor3;
+            color: $colorW1;
+            transform: scale(1.1);
+          }
+
+          &:active {
+            transform: scale(0.9);
+          }
+          &:disabled {
+            background: $colorCard;
+            cursor: not-allowed;
+            font-size: 0.9rem;
+
+            &:hover {
+              transform: none;
+              color: initial;
+              opacity: 0.6;
+              background: $colorCard;
+            }
+          }
+        }
+      }
+      h4#question-number {
+        margin-top: 25px;
+        font-family: $fontOxy;
+        font-size: 1.3rem;
+      }
+    }
+
+    .end-quiz {
+      @include regularCard;
+      @include colunmContainer;
+      justify-content: space-evenly;
+      padding: 60px 50px;
+      min-height: 50vh;
+
+      h1,
+      h3 {
+        font-family: $fontOxy;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      button {
+        @include regularBtn;
+
+        &:hover {
+          background: $regularColor3;
+          color: $colorW1;
+          transform: scale(1.1);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    .quiz-intro {
+      @include regularCard;
+      @include colunmContainer;
+      justify-content: space-evenly;
+      padding: 60px 50px;
+      min-height: 50vh;
+
+      h2 {
+        font-size: 2.5rem;
+        font-family: $fontOxy;
+      }
+
+      .level-btn {
+        @include flexContainer;
+        justify-content: space-evenly;
+        width: 80%;
+
+        button {
+          @include regularBtn;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+
+        button#normal:hover {
+          background: $regularColor3;
+          color: $colorW1;
+        }
+
+        button#hard:hover {
+          background: $regularColor4;
+          color: $colorW1;
+        }
+      }
+    }
+  }
+}
