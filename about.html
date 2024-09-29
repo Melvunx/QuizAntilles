@@ -14,8 +14,8 @@
           ><h2>Quiz'Antilles<i class="fa-solid fa-umbrella-beach"></i></h2
         ></a>
         <ul class="link">
-          <li><a href="./quiz.html">Quiz</a></li>
-          <li><a href="./about.html">A propos</a></li>
+          <li><a href="./quiz.html">quiz</a></li>
+          <li><a href="./about.html">à propos</a></li>
         </ul>
       </nav>
       <div class="header-container">
@@ -30,15 +30,35 @@
       <div class="card-container">
         <div class="card mada">
           <div class="img-container">
-            <img src="./public/img/Flag-of-Martinique.svg.png" alt="" />
+            <img
+              src="./public/img/Flag-of-Martinique.svg.png"
+              alt="drapeau-Martinique"
+            />
           </div>
           <div class="card-content">
             <h3 class="title-card">Martinique</h3>
-            <a class="icon" href=""
-              ><i class="fa-solid fa-earth-americas"></i
-            ></a>
-            <a class="icon" href=""><i class="fa-regular fa-newspaper"></i></a>
-            <button class="map"><i class="fa-solid fa-map"></i></button>
+            <a class="icon" href="https://la1ere.francetvinfo.fr/martinique/">
+              <i class="fa-solid fa-earth-americas"></i>
+              <span>Martinique 1ère</span>
+            </a>
+            <a class="icon" href="https://www.martinique.franceantilles.fr/">
+              <i class="fa-regular fa-newspaper"> </i>
+              <span>France-Antilles</span>
+            </a>
+            <button class="map" id="madaPopup">
+              <i class="fa-solid fa-map"></i>
+            </button>
+            <div class="popup mart">
+              <button class="closeBtn" id="closeMada">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+              <div class="popup-img">
+                <img
+                  src="./public/img/carte_martinique-1.png"
+                  alt="carte-Martinique"
+                />
+              </div>
+            </div>
             <div class="paragraphe-container">
               <p>
                 La Martinique, surnommée l'île aux fleurs, se trouve dans les
@@ -62,15 +82,32 @@
         </div>
         <div class="card gwada">
           <div class="img-container">
-            <img src="./public/img/flagOfGwada.png" alt="" />
+            <img src="./public/img/flagOfGwada.png" alt="drapeau-Guadeloupe" />
           </div>
           <div class="card-content">
             <h3 class="title-card">Guadeloupe</h3>
-            <a class="icon" href=""
-              ><i class="fa-solid fa-earth-americas"></i
-            ></a>
-            <a class="icon" href=""><i class="fa-regular fa-newspaper"></i></a>
-            <button class="map"><i class="fa-solid fa-map"></i></button>
+            <a class="icon" href="https://la1ere.francetvinfo.fr/guadeloupe/">
+              <i class="fa-solid fa-earth-americas"></i>
+              <span>Guadeloupe 1ère</span>
+            </a>
+            <a class="icon" href="https://www.guadeloupe.franceantilles.fr/">
+              <i class="fa-regular fa-newspaper"></i>
+              <span>France-Antilles</span>
+            </a>
+            <button class="map" id="gwadaPopup">
+              <i class="fa-solid fa-map"></i>
+            </button>
+            <div class="popup guad">
+              <button class="closeBtn" id="closeGwada">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+              <div class="popup-img">
+                <img
+                  src="./public/img/carte-guadeloupe-papillon.jpg"
+                  alt="carte-Guadeloupe"
+                />
+              </div>
+            </div>
             <div class="paragraphe-container">
               <p>
                 La Guadeloupe, également située dans les Petites Antilles,
@@ -94,27 +131,33 @@
     </main>
 
     <footer>
+      <h2>Mes réseaux</h2>
       <ul class="socials">
-        <h2>Mes réseaux</h2>
         <li class="icon instagram">
           <a href="https://www.instagram.com/melvunx/"
             ><i class="fa-brands fa-instagram"></i
           ></a>
+          <a href="http://www.instagram.com/melvunx/"><span>Instagram</span></a>
         </li>
         <li class="icon linkedIn">
           <a href="https://www.linkedin.com/in/melvin-augustine/"
             ><i class="fa-brands fa-linkedin"></i
           ></a>
+          <a href="https://www.linkedin.com/in/melvin-augustine/"
+            ><span>LinkedIn</span></a
+          >
         </li>
         <li class="icon github">
           <a href="https://github.com/Melvunx/"
             ><i class="fa-brands fa-github"></i
           ></a>
+          <a href="https://github.com/Melvunx/"><span>Github</span></a>
         </li>
         <li class="icon twitter">
           <a href="https://x.com/melvunx"
             ><i class="fa-brands fa-square-x-twitter"></i
           ></a>
+          <a href="https://x.com/melvunx"><span>Twitter</span></a>
         </li>
       </ul>
     </footer>
@@ -122,5 +165,6 @@
       src="https://kit.fontawesome.com/50bbbac735.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./app.js"></script>
   </body>
 </html>

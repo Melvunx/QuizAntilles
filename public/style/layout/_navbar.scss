@@ -1,0 +1,78 @@
+nav {
+display: grid;
+grid-template-columns: 40% 60%;
+  background: $navbarColor;
+  padding: 15px;
+
+  a {
+    h2 {
+      font-family: $fontCav;
+      color: $colorW1;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+
+  .link {
+    @include flexContainer;
+    justify-content: space-around;
+    gap: 15px;
+
+    li {
+      text-transform: capitalize;
+      font-family: $fontCav;
+      font-size: 1.7rem;
+    }
+  }
+}
+
+header {
+  min-height: 90vh;
+  background: url(../img/header-ragdoll.png) center/cover;
+
+  .header-container {
+    @include flexContainer;
+    min-height: 80vh;
+    width: 60%;
+    margin: $marginCenter;
+    text-align: center;
+
+    .header-content {
+      @include colunmContainer;
+      border: 2px solid $colorCard;
+      overflow: hidden;
+      background: $colorCard;
+      border-radius: 20px;
+      padding: 80px 60px;
+      gap: 30px;
+      backdrop-filter: blur(2px);
+
+      h1 {
+        font-family: $fontOxy;
+        font-size: 3.1rem;
+        text-transform: uppercase;
+        background: $gradient1;
+        background-size: 400%;
+        background-position: left;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textAnim 8s $delay infinite;
+
+        @keyframes textAnim {
+          50% {
+            background-position: right;
+          }
+          100% {
+            background-position: left;
+          }
+        }
+      }
+
+      h4 {
+        font-family: $fontCav;
+        font-size: 2.4rem;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}

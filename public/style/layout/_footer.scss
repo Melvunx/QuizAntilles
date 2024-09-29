@@ -1,0 +1,20 @@
+footer {
+  @include colunmContainer;
+  justify-content: space-evenly;
+  min-height: 15vh;
+
+  .socials {
+    @include flexContainer;
+    justify-content: space-evenly;
+    width: 40%;
+
+    li.icon {
+      @include colunmContainer;
+      font-size: 1.2rem;
+
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+}
