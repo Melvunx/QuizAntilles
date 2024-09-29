@@ -24,14 +24,7 @@ class Question {
   }
 }
 
-const questions = [
-  new Question(
-    "multiple",
-    "Que trouve-t-on dans un repas de Noël antillais",
-    ["Pois d'angoles", "Jambon Nwel", "Pâtés salés", "Dinde", "Saumon fumé"],
-    ["Pois d'angoles", "Jambon Nwel", "Pâtés salés"]
-  ),
-
+export const questions = [
   new Question(
     "unique",
     "Quel poisson issu des mers froides utilise-t-on pour faire des accras en Martinique",
@@ -44,6 +37,13 @@ const questions = [
     "Qu'est-ce que le féroce",
     ["Adjectif", "Boisson très alcoolisée", "Plat à base d'avocat"],
     "Plat à base d'avocat"
+  ),
+
+  new Question(
+    "unique",
+    "Quel est le nombre de communes en Martinique",
+    ["37", "30", "34"],
+    "34"
   ),
 
   new Question(
@@ -73,6 +73,13 @@ const questions = [
 
   new Question(
     "unique",
+    "Qui est le préfet de la Martinique",
+    ["Stanislas Cazelles ", "Jean-Christophe Bouvier", "Franck Robine"],
+    "Jean-Christophe Bouvier"
+  ),
+
+  new Question(
+    "unique",
     "Qu'est-ce qu'un dombré",
     [
       "Plat avec des boulettes de viande",
@@ -98,6 +105,13 @@ const questions = [
       "Ancien musicien",
     ],
     "Style musical qui accompagne un manège"
+  ),
+
+  new Question(
+    "unique",
+    "Qui est le préfet de la Guadeloupe",
+    ["Alexandre Rochatte", "Philippe Gustin", "Xavier Lefort"],
+    "Xavier Lefort"
   ),
 
   new Question(
@@ -218,6 +232,13 @@ const questions = [
 
   new Question(
     "unique",
+    "En quelle année la Martinique a été découverte",
+    ["1492", "1502", "1498"],
+    "1502"
+  ),
+
+  new Question(
+    "unique",
     "Qu'est ce qu'un dowliss",
     ["Chien", "Esprit maléfique", "Plat de résistance"],
     "Esprit maléfique"
@@ -232,9 +253,23 @@ const questions = [
 
   new Question(
     "multiple",
+    "Que trouve-t-on dans un repas de Noël antillais",
+    ["Pois d'angoles", "Jambon Nwel", "Pâtés salés", "Dinde", "Saumon fumé"],
+    ["Pois d'angoles", "Jambon Nwel", "Pâtés salés"]
+  ),
+
+  new Question(
+    "multiple",
     "Quels types de boudins N'existent PAS",
     ["Manmanw", "Rouge", "Vert", "Blanc", "Nègre"],
     ["Manmanw", "Vert", "Nègre"]
+  ),
+
+  new Question(
+    "multiple",
+    "Par qui les Antilles ont-elles été colonisées au cours de leur histoire",
+    ["Les anglais", "Les espagnols", "Les néerlandais", "Les français"],
+    ["Les anglais", "Les français"]
   ),
 
   new Question(
@@ -251,5 +286,3 @@ const questions = [
     ["Moule", "Marigot"]
   ),
 ];
-
-export { Question as classQuestion, questions };

@@ -1,5 +1,4 @@
-import { classQuestion, questions } from "./assets/data/Question.js";
-
+import { questions } from "./assets/data/Question.js";
 const startPage = document.querySelector(".start-page");
 
 class Quiz {
@@ -8,11 +7,10 @@ class Quiz {
     this.questions = questions;
     this.currentQuestionIndex = 0;
   }
-
   getCurrentQuestion() {
     return this.questions[this.currentQuestionIndex];
   }
-
+  //On enregistre le réponse de l'utilsateur et on passe à la question suivante
   getUserAnswer(answer) {
     if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
       this.score++;
@@ -37,11 +35,12 @@ const display = {
   },
 
   choices: function (quiz) {
+    //choicesQuestion est un tableau des choix de la question
     let choicesQuestion = quiz.getCurrentQuestion().choices;
     const container = document.querySelector(".choice-container");
     container.innerHTML = ""; // Réinitialise le contenu précédent
 
-    // Vérifie le type de la question et génère les inputs correspondants
+    // On vérifie le type de la question et génère les inputs correspondants
     if (quiz.getCurrentQuestion().type === "unique") {
       choicesQuestion.forEach((choice, index) => {
         container.innerHTML += `
@@ -73,6 +72,7 @@ const display = {
         const selectedRadio = container.querySelector(
           "input[type='radio']:checked"
         );
+        // Si le radio est sélectionné, le selectedRadio devient false donc le bouton est activé
         nextButton.disabled = !selectedRadio;
       } else if (quiz.getCurrentQuestion().type === "multiple") {
         const selectedCheckboxes = container.querySelectorAll(
@@ -224,13 +224,11 @@ const startQuiz = (questions) => {
 // Gestionnaire des boutons
 normal.addEventListener("click", () => {
   const selectedQuestions = selectNormalQuizQuestions(questions);
-  console.log(selectedQuestions);
   startQuiz(selectedQuestions);
   startPage.classList.add("invisible");
 });
 
 hard.addEventListener("click", () => {
-  console.log(selectedQuestions);
   const selectedQuestions = selectHardQuizQuestions(questions);
   startQuiz(selectedQuestions);
   startPage.classList.add("invisible");
@@ -240,9 +238,6 @@ hard.addEventListener("click", () => {
 const quizApp = (quiz) => {
   if (quiz.hasEnded()) {
     display.endQuiz(quiz);
-    document
-      .getElementById("end-btn")
-      .addEventListener("click", () => startPage.classList.remove("invisible"));
   } else {
     display.question(quiz);
     display.choices(quiz);
