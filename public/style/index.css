@@ -80,7 +80,11 @@ main::after {
   bottom: 5px;
 }
 
-.popup-visible {
+.invisible {
+  display: none;
+}
+
+.visible {
   display: block;
 }
 

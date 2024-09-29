@@ -123,6 +123,10 @@ main {
   }
 }
 
-.popup-visible {
+.invisible {
+  display: none;
+}
+
+.visible {
   display: block;
 }

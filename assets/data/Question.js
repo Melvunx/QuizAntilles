@@ -8,17 +8,30 @@ class Question {
 
   isCorrectAnswer(choice) {
     if (this.type === "unique") {
-      return choice === this.answers;
+      return String(choice) === this.answers;
     } else if (this.type === "multiple") {
+      // Vérifie si toutes les bonnes réponses sont présentes dans les réponses de l'utilisateur, peu importe l'ordre
+      const sortedUserAnswers = choice.sort();
+      const sortedCorrectAnswers = this.answers.sort();
+
       return (
-        choice.every((answer) => this.answers.includes(answer)) &&
-        this.answers.every((answer) => choice.includes(answer))
+        sortedUserAnswers.length === sortedCorrectAnswers.length &&
+        sortedUserAnswers.every(
+          (val, index) => val === sortedCorrectAnswers[index]
+        )
       );
     }
   }
 }
 
-export const questions = [
+const questions = [
+  new Question(
+    "multiple",
+    "Que trouve-t-on dans un repas de Noël antillais",
+    ["Pois d'angoles", "Jambon Nwel", "Pâtés salés", "Dinde", "Saumon fumé"],
+    ["Pois d'angoles", "Jambon Nwel", "Pâtés salés"]
+  ),
+
   new Question(
     "unique",
     "Quel poisson issu des mers froides utilise-t-on pour faire des accras en Martinique",
@@ -28,14 +41,14 @@ export const questions = [
 
   new Question(
     "unique",
-    "Qu'est ce que le féroce",
+    "Qu'est-ce que le féroce",
     ["Adjectif", "Boisson très alcoolisée", "Plat à base d'avocat"],
     "Plat à base d'avocat"
   ),
 
   new Question(
     "unique",
-    "Qu'est qu'un bokit",
+    "Qu'est-ce qu'un bokit",
     ["Sandwich", "Kit de cuisine", "Animal"],
     "Sandwich"
   ),
@@ -191,7 +204,7 @@ export const questions = [
 
   new Question(
     "unique",
-    "Qu'es-ce que le Trigonocéphale",
+    "Qu'est-ce que le Trigonocéphale",
     ["Poisson meurtrier", "Serpent venimeux", "Oiseau mangeur d'homme"],
     "Serpent venimeux"
   ),
@@ -219,13 +232,6 @@ export const questions = [
 
   new Question(
     "multiple",
-    "Que trouve-t-on dans un repas de Noël antillais",
-    ["Pois d'angoles", "Jambon Nwel", "Pâtés salés", "Dinde", "Saumon fumé"],
-    ["Pois d'angoles", "Jambon Nwel", "Pâtés salés"]
-  ),
-
-  new Question(
-    "multiple",
     "Quels types de boudins N'existent PAS",
     ["Manmanw", "Rouge", "Vert", "Blanc", "Nègre"],
     ["Manmanw", "Vert", "Nègre"]
@@ -240,8 +246,10 @@ export const questions = [
 
   new Question(
     "multiple",
-    "Parmis ces capitales lesquelles N'en sont PAS",
+    "Parmi ces capitales lesquelles N'en sont PAS",
     ["La Havanne", "Port-au-Prince", "Moule", "Fort-de-France", "Marigot"],
     ["Moule", "Marigot"]
   ),
 ];
+
+export { Question as classQuestion, questions };
