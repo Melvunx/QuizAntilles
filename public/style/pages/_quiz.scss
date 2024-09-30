@@ -3,12 +3,17 @@
   min-height: 90vh;
 
   #quiz {
-    min-height: 50vh;
     @include flexContainer;
+    box-shadow: $shadowCard;
+    transform: $regularTransition;
+    background: url(../img/fond-floral1.jpg) center/cover;
+    min-height: 50vh;
+    border-radius: 15px;
 
     .start-page {
-      @include regularCard;
+      // backdrop-filter: blur(2px);
       @include colunmContainer;
+      @include regularCard;
       padding: 55px 45px;
       justify-content: space-evenly;
       min-height: 50vh;
@@ -16,7 +21,9 @@
 
       h1,
       h3 {
+        @include regularCard;
         font-family: $fontOxy;
+        backdrop-filter: blur(1px);
       }
 
       h3 {
@@ -25,6 +32,7 @@
       }
 
       #quiz-option {
+        backdrop-filter: blur(2px);
         @include colunmContainer;
         gap: 15px;
 
@@ -66,6 +74,8 @@
     .quiz-content {
       @include colunmContainer;
       @include regularCard;
+      transition: $regularTransition;
+      backdrop-filter: blur(2px);
       position: relative;
       justify-content: space-evenly;
       min-height: 55vh;
@@ -74,7 +84,10 @@
       gap: 5px;
 
       h2#question {
+        @include regularCard;
+        background: $hoverColor3;
         font-family: $fontOxy;
+        color: $colorW1;
         font-size: 1.6rem;
         width: 80%;
         margin: $marginCenter;
@@ -86,8 +99,8 @@
         @include flexContainer;
         justify-content: space-evenly;
         width: 90%;
-        gap: 5px;
-        margin-bottom: 25px;
+        gap: 10px;
+        margin-bottom: 40px;
 
         input[type="radio"],
         input[type="checkbox"] {
@@ -100,7 +113,6 @@
           border-radius: 10px;
           font-weight: 600;
           color: $colorW1;
-          padding: 10px;
         }
         input[type="radio"]:checked + label {
           background: $regularColor5;
@@ -111,15 +123,18 @@
         }
 
         label {
+          backdrop-filter: blur(2px);
           transition: $regularTransition;
           font-family: $fontExo;
           border-radius: 10px;
           font-size: 1.2rem;
           cursor: pointer;
-          padding: 10px;
+          padding: 5px;
+          box-shadow: $shadowCard;
           text-align: center;
           line-height: 30px;
           width: 25%;
+          background: $colorCard;
 
           &::selection {
             background: none;
@@ -144,9 +159,10 @@
           font-size: 1.05rem;
           font-family: $fontOxy;
           transition: $regularTransition;
-          top: 65%;
+          top: 71%;
           font-weight: 600;
           letter-spacing: 1px;
+          box-shadow: $shadowCard;
 
           &:hover {
             background: $regularColor3;
@@ -161,6 +177,7 @@
             background: $colorCard;
             cursor: not-allowed;
             font-size: 0.9rem;
+            box-shadow: none;
 
             &:hover {
               transform: none;
@@ -172,7 +189,7 @@
         }
       }
       h4#question-number {
-        margin-top: 25px;
+        margin-top: 45px;
         font-family: $fontOxy;
         font-size: 1.3rem;
       }
@@ -221,6 +238,7 @@
       min-height: 50vh;
 
       h2 {
+        @include regularCard;
         font-size: 2.5rem;
         font-family: $fontOxy;
       }

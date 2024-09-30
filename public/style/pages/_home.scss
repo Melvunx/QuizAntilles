@@ -8,6 +8,8 @@
     @include regularCard;
     grid-template-columns: 30% 70%;
     display: grid;
+    box-shadow: $shadowCard;
+
 
     .img-container {
       @include imgContainer;
@@ -45,8 +47,10 @@
   width: 80%;
   margin: $marginCenter;
   gap: 15px;
-
+  
+  
   .learn-content {
+    box-shadow: $shadowCard;
     @include regularCard;
     display: grid;
     grid-template-columns: 70% 30%;

@@ -8,11 +8,14 @@ $regularColor5: gold;
 $regularColor6: salmon;
 $hoverColor1: lightblue;
 $hoverColor2: rgba(122, 119, 119, 0.44);
+$hoverColor3: rgba(78, 25, 192, 0.402);
 $gradient1: linear-gradient(to right, #1d2b64, #26a0da);
 $gradient2: linear-gradient(to right, #e53935, #e35d5b);
 $gradient3: linear-gradient(to right, #1d2b64, #f8cdda);
 $navbarColor: rgba(124, 164, 195, 0.672);
 $colorCard: #ffffff90;
+$shadowCard: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 $marginCenter: 0 auto;
 $regularTransition: all 0.3s ease-out;
 $delay: 0.15s;
@@ -89,6 +92,7 @@ $fontExo: "Exo";
   font-weight: 600;
   font-family: $fontExo;
   letter-spacing: 1px;
+  box-shadow: $shadowCard;
   transition: $regularTransition;
 }
 

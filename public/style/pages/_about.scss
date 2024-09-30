@@ -1,6 +1,7 @@
 .card-container {
   @include colunmContainer;
   @include regularCard;
+  box-shadow: $shadowCard;
   padding: 35px 25px;
   gap: 25px;
 
@@ -79,8 +80,6 @@
           transform: scale(0.9);
         }
       }
-
-
 
       .popup {
         min-height: 100vh;

@@ -105,6 +105,8 @@ main::after {
   overflow: hidden;
   grid-template-columns: 30% 70%;
   display: grid;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .learn-knowledge-container .learn-content .img-container {
   display: -webkit-box;
@@ -176,6 +178,8 @@ main::after {
   gap: 15px;
 }
 .learn-about-container .learn-content {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background: rgba(255, 255, 255, 0.5647058824);
   padding: 20px 10px;
   border-radius: 15px;
@@ -250,7 +254,6 @@ main::after {
   min-height: 90vh;
 }
 .quiz-container #quiz {
-  min-height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,12 +263,15 @@ main::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  -webkit-transform: all 0.3s ease-out;
+          transform: all 0.3s ease-out;
+  background: url(../img/fond-floral1.jpg) center/cover;
+  min-height: 50vh;
+  border-radius: 15px;
 }
 .quiz-container #quiz .start-page {
-  background: rgba(255, 255, 255, 0.5647058824);
-  padding: 20px 10px;
-  border-radius: 15px;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,6 +285,10 @@ main::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: rgba(255, 255, 255, 0.5647058824);
+  padding: 20px 10px;
+  border-radius: 15px;
+  overflow: hidden;
   padding: 55px 45px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -288,13 +298,21 @@ main::after {
 }
 .quiz-container #quiz .start-page h1,
 .quiz-container #quiz .start-page h3 {
+  background: rgba(255, 255, 255, 0.5647058824);
+  padding: 20px 10px;
+  border-radius: 15px;
+  overflow: hidden;
   font-family: "Oxygen";
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
 }
 .quiz-container #quiz .start-page h3 {
   letter-spacing: 1px;
   font-size: 1.3rem;
 }
 .quiz-container #quiz .start-page #quiz-option {
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,6 +337,8 @@ main::after {
   font-weight: 600;
   font-family: "Exo";
   letter-spacing: 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   color: #fff;
@@ -367,6 +387,10 @@ main::after {
   padding: 20px 10px;
   border-radius: 15px;
   overflow: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   position: relative;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -377,7 +401,13 @@ main::after {
   gap: 5px;
 }
 .quiz-container #quiz .quiz-content h2#question {
+  background: rgba(255, 255, 255, 0.5647058824);
+  padding: 20px 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(78, 25, 192, 0.402);
   font-family: "Oxygen";
+  color: #fff;
   font-size: 1.6rem;
   width: 80%;
   margin: 0 auto;
@@ -398,8 +428,8 @@ main::after {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 90%;
-  gap: 5px;
-  margin-bottom: 25px;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 .quiz-container #quiz .quiz-content .choice-container input[type=radio],
 .quiz-container #quiz .quiz-content .choice-container input[type=checkbox] {
@@ -412,7 +442,6 @@ main::after {
   border-radius: 10px;
   font-weight: 600;
   color: #fff;
-  padding: 10px;
 }
 .quiz-container #quiz .quiz-content .choice-container input[type=radio]:checked + label {
   background: gold;
@@ -421,16 +450,21 @@ main::after {
   background: salmon;
 }
 .quiz-container #quiz .quiz-content .choice-container label {
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   font-family: "Exo";
   border-radius: 10px;
   font-size: 1.2rem;
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   text-align: center;
   line-height: 30px;
   width: 25%;
+  background: rgba(255, 255, 255, 0.5647058824);
 }
 .quiz-container #quiz .quiz-content .choice-container label::-moz-selection {
   background: none;
@@ -457,9 +491,11 @@ main::after {
   font-family: "Oxygen";
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  top: 65%;
+  top: 71%;
   font-weight: 600;
   letter-spacing: 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .quiz-container #quiz .quiz-content .choice-container button:hover {
   background: rgb(37, 164, 37);
@@ -475,6 +511,8 @@ main::after {
   background: rgba(255, 255, 255, 0.5647058824);
   cursor: not-allowed;
   font-size: 0.9rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 .quiz-container #quiz .quiz-content .choice-container button:disabled:hover {
   -webkit-transform: none;
@@ -484,7 +522,7 @@ main::after {
   background: rgba(255, 255, 255, 0.5647058824);
 }
 .quiz-container #quiz .quiz-content h4#question-number {
-  margin-top: 25px;
+  margin-top: 45px;
   font-family: "Oxygen";
   font-size: 1.3rem;
 }
@@ -531,6 +569,8 @@ main::after {
   font-weight: 600;
   font-family: "Exo";
   letter-spacing: 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
@@ -569,6 +609,10 @@ main::after {
   min-height: 50vh;
 }
 .quiz-container #quiz .quiz-intro h2 {
+  background: rgba(255, 255, 255, 0.5647058824);
+  padding: 20px 10px;
+  border-radius: 15px;
+  overflow: hidden;
   font-size: 2.5rem;
   font-family: "Oxygen";
 }
@@ -596,6 +640,8 @@ main::after {
   font-weight: 600;
   font-family: "Exo";
   letter-spacing: 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
@@ -634,6 +680,8 @@ main::after {
   padding: 20px 10px;
   border-radius: 15px;
   overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   padding: 35px 25px;
   gap: 25px;
 }
@@ -885,12 +933,53 @@ nav {
   grid-template-columns: 40% 60%;
   background: rgba(124, 164, 195, 0.672);
   padding: 15px;
+  overflow: hidden;
 }
-nav a h2 {
+nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav .logo a {
+  position: relative;
+  z-index: 1;
+}
+nav .logo a::before {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 125%;
+  height: 180%;
+  -webkit-transform: translate(-11%, -20%);
+          transform: translate(-11%, -20%);
+  z-index: -1;
+}
+nav .logo a:hover {
+  color: rgba(78, 25, 192, 0.402);
+}
+nav .logo a:hover::before {
+  background: rgba(255, 255, 255, 0.5647058824);
+}
+nav .logo a h2 {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   font-family: "Caveat";
   color: #fff;
   cursor: pointer;
   text-align: center;
+  font-size: 2rem;
+  width: 100%;
+}
+nav .logo a h2:hover {
+  color: rgba(78, 25, 192, 0.402);
 }
 nav .link {
   display: -webkit-box;
@@ -909,12 +998,70 @@ nav .link {
 nav .link li {
   text-transform: capitalize;
   font-family: "Caveat";
-  font-size: 1.7rem;
+  font-size: 2rem;
+}
+nav .link li a {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  color: #fff;
+  padding: 15px;
+}
+nav .link li a:hover {
+  color: rgba(78, 25, 192, 0.402);
+  background: rgba(255, 255, 255, 0.5647058824);
 }
 
 header {
   min-height: 90vh;
-  background: url(../img/header-ragdoll.png) center/cover;
+}
+header .slider {
+  width: 1300px;
+  max-width: 100vw;
+  height: 700px;
+  margin: auto;
+  position: relative;
+}
+header .slider .list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+header .slider .list .item img {
+  width: 1300px;
+  max-width: 100vw;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header .slider ul.dots {
+  position: absolute;
+  bottom: 10px;
+  color: #fff;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+header .slider ul.dots li {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  margin: 20px;
+  border-radius: 20px;
+}
+header .slider ul.dots li.active {
+  width: 30px;
 }
 header .header-container {
   display: -webkit-box;

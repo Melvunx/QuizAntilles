@@ -1,15 +1,48 @@
 nav {
-display: grid;
-grid-template-columns: 40% 60%;
+  display: grid;
+  grid-template-columns: 40% 60%;
   background: $navbarColor;
   padding: 15px;
+  overflow: hidden;
 
-  a {
-    h2 {
-      font-family: $fontCav;
-      color: $colorW1;
-      cursor: pointer;
-      text-align: center;
+  .logo {
+    @include flexContainer;
+
+    a {
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        transition: $regularTransition;
+        content: "";
+        position: absolute;
+        display: block;
+        width: 125%;
+        height: 180%;
+        transform: translate(-11%, -20%);
+        z-index: -1;
+      }
+
+      &:hover {
+        color: $hoverColor3;
+        &::before {
+          background: $colorCard;
+        }
+      }
+
+      h2 {
+        transition: $regularTransition;
+        font-family: $fontCav;
+        color: $colorW1;
+        cursor: pointer;
+        text-align: center;
+        font-size: 2rem;
+        width: 100%;
+
+        &:hover {
+          color: $hoverColor3;
+        }
+      }
     }
   }
 
@@ -21,14 +54,73 @@ grid-template-columns: 40% 60%;
     li {
       text-transform: capitalize;
       font-family: $fontCav;
-      font-size: 1.7rem;
+      font-size: 2rem;
+
+      a {
+        transition: $regularTransition;
+        color: $colorW1;
+
+        padding: 15px;
+        &:hover {
+          color: $hoverColor3;
+          background: $colorCard;
+        }
+      }
     }
   }
 }
 
 header {
   min-height: 90vh;
-  background: url(../img/header-ragdoll.png) center/cover;
+  // background: url(../img/header-ragdoll.png) center/cover;
+
+  .slider {
+    width: 1300px;
+    max-width: 100vw;
+    height: 700px;
+    margin: auto;
+    position: relative;
+
+    .list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      display: flex;
+      width: max-content;
+
+      .item {
+        img {
+          width: 1300px;
+          max-width: 100vw;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    ul.dots {
+      position: absolute;
+      bottom: 10px;
+      color: $colorW1;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      li {
+        width: 10px;
+        height: 10px;
+        background: $colorW1;
+        margin: 20px;
+        border-radius: 20px;
+      }
+
+      li.active {
+        width: 30px;
+      }
+    }
+  }
 
   .header-container {
     @include flexContainer;
