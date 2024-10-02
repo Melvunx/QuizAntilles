@@ -9,8 +9,45 @@ nav {
   width: 100%;
   z-index: 3;
 
+  @media screen and (max-width: 520px) {
+    @include flexContainer;
+  }
+
+  button#sidebutton {
+    display: none;
+    font-size: 1.4rem;
+    color: $colorW1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: $regularTransition;
+
+    &:hover {
+      background: $hoverColor3;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.9);
+    }
+
+    @media screen and (max-width: 520px) {
+      position: absolute;
+      display: block;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
   .logo {
     @include flexContainer;
+
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
 
     a {
       position: relative;
@@ -55,6 +92,10 @@ nav {
     justify-content: space-around;
     gap: 15px;
 
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
+
     li {
       text-transform: capitalize;
       font-family: $fontCav;
@@ -77,14 +118,60 @@ nav {
 header {
   min-height: 90vh;
   overflow: hidden;
-  // background: url(../img/header-ragdoll.png) center/cover;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 80%;
+    height: 1.5px;
+    background: $colorB1;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: 805px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 805px) {
+    min-height: 80vh;
+    background: url(../img/fdf-img.jpg) center/cover;
+  }
+
+  .sidebar {
+    position: absolute;
+    background: $sidebarColor;
+    min-height: 100vh;
+    width: 50%;
+    z-index: 4;
+    right: -50%;
+    transition: $regularTransition;
+  }
+
+  .sidebar-active {
+    right: 0;
+    transition: $regularTransition;
+  }
 
   .slider {
-    // width: 1300px;
     max-width: 100vw;
     height: 700px;
     margin: auto;
     position: relative;
+
+    @media screen and (max-width: 1400px) {
+      height: 550px;
+    }
+
+    @media screen and (max-width: 1105px) {
+      height: 450px;
+    }
+
+    @media screen and (max-width: 805px) {
+      position: static;
+    }
 
     .list {
       transition: all 1.5s ease-out;
@@ -95,13 +182,21 @@ header {
       display: flex;
       width: max-content;
 
+      @media screen and (max-width: 805px) {
+        visibility: hidden;
+        position: static;
+      }
+
       .item {
         overflow: hidden;
         img {
           width: 100%;
           max-width: 100vw;
-          // height: 100%;
           object-fit: cover;
+
+          @media screen and (max-width: 805px) {
+            display: none;
+          }
         }
       }
     }
@@ -116,6 +211,11 @@ header {
       justify-content: center;
       z-index: 2;
 
+      @media screen and (max-width: 805px) {
+        position: static;
+        display: none;
+      }
+
       li {
         cursor: pointer;
         width: 10px;
@@ -125,6 +225,10 @@ header {
         margin: 20px;
         border-radius: 20px;
         transition: all 0.5s ease-out;
+
+        @media screen and (max-width: 805px) {
+          display: none;
+        }
 
         &:hover {
           background: $hoverColor1;
@@ -150,8 +254,11 @@ header {
     width: 60%;
     margin: $marginCenter;
     text-align: center;
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     .header-content {
       @include colunmContainer;
@@ -163,6 +270,14 @@ header {
       gap: 30px;
       backdrop-filter: blur(2px);
 
+      @media screen and (max-width: 1400px) {
+        padding: 50px 40px;
+      }
+
+      @media screen and (max-width: 1105px) {
+        padding: 35px 20px;
+      }
+
       h1 {
         font-family: $fontOxy;
         font-size: 3.1rem;
@@ -173,6 +288,19 @@ header {
         background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: textAnim 8s $delay infinite;
+
+        @media screen and (max-width: 1105px) {
+          font-size: 1.8rem;
+        }
+
+        @media screen and (max-width: 625px) {
+          font-size: 1.6rem;
+        }
+
+        @media screen and (max-width: 505px) {
+          font-size: 1.4rem;
+          width: 90%;
+        }
 
         @keyframes textAnim {
           50% {
@@ -188,6 +316,20 @@ header {
         font-family: $fontCav;
         font-size: 2.4rem;
         letter-spacing: 0.5px;
+
+        @media screen and (max-width: 1105px) {
+          font-size: 1.9rem;
+        }
+
+        @media screen and (max-width: 865px) {
+          font-size: 1.7rem;
+        }
+
+        @media screen and (max-width: 505px) {
+          font-size: 1.3rem;
+          line-height: 35px;
+          width: 85%;
+        }
       }
     }
   }

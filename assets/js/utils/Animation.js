@@ -15,21 +15,21 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("scroll", () => {
-  let lastScroll = 280;
+  let lastScroll = 220;
   if (window.scrollY > lastScroll) {
     cardHomeUp.classList.add("scale-in-top");
   }
 });
 
 window.addEventListener("scroll", () => {
-  let lastScroll = 440;
+  let lastScroll = 330;
   if (window.scrollY > lastScroll) {
     cardHomeDown.classList.add("scale-in-bottom");
   }
 });
 
 window.addEventListener("scroll", () => {
-  let lastScroll = 175;
+  let lastScroll = 150;
   if (window.scrollY > lastScroll) {
     cardAbout.classList.add("slide-in-bck-center");
   }

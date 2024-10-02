@@ -238,6 +238,9 @@ const selectHardQuizQuestions = (questions) => {
 
 // Initialise le quiz
 const startQuiz = (questions) => {
+  for (const question in questions) {
+    console.log(questions[question].text);
+  }
   const quiz = new Quiz(questions);
   quizApp(quiz);
 };
