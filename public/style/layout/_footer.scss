@@ -1,7 +1,17 @@
 footer {
   @include colunmContainer;
+  position: relative;
   justify-content: space-evenly;
   min-height: 15vh;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 70%;
+    height: 2px;
+    top: -5px;
+    background: $colorB1;
+  }
 
   .socials {
     @include flexContainer;

@@ -4,25 +4,41 @@
 
   #quiz {
     @include flexContainer;
-    box-shadow: $shadowCard;
     transform: $regularTransition;
-    background: url(../img/fond-floral1.jpg) center/cover;
     min-height: 50vh;
     border-radius: 15px;
 
     .start-page {
-      // backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
       @include colunmContainer;
       @include regularCard;
       padding: 55px 45px;
       justify-content: space-evenly;
       min-height: 50vh;
       min-width: 800px;
+      opacity: 0;
+      animation: swing-in-top-fwd 0.7s $easeout $delay forwards;
+
+      @keyframes swing-in-top-fwd {
+        0% {
+          transform: rotateX(-100deg);
+          transform-origin: top;
+          opacity: 0.2;
+        }
+        100% {
+          transform: rotateX(0deg);
+          transform-origin: top;
+          opacity: 1;
+        }
+      }
 
       h1,
       h3 {
-        @include regularCard;
         font-family: $fontOxy;
+      }
+
+      h1 {
+        @include regularCard;
         backdrop-filter: blur(1px);
       }
 
@@ -31,8 +47,7 @@
         font-size: 1.3rem;
       }
 
-      #quiz-option {
-        backdrop-filter: blur(2px);
+      .quiz-option {
         @include colunmContainer;
         gap: 15px;
 
@@ -82,6 +97,19 @@
       min-width: 1000px;
       display: none;
       gap: 5px;
+      animation: rotate-in-center 0.6s $easeout 0.5s forwards;
+      opacity: 0;
+
+      @keyframes rotate-in-center {
+        0% {
+          transform: rotate(-360deg);
+          opacity: 0.1;
+        }
+        100% {
+          transform: rotate(0);
+          opacity: 1;
+        }
+      }
 
       h2#question {
         @include regularCard;
@@ -93,6 +121,7 @@
         margin: $marginCenter;
         text-align: center;
         line-height: 40px;
+        opacity: 0;
       }
 
       .choice-container {
@@ -135,6 +164,7 @@
           line-height: 30px;
           width: 25%;
           background: $colorCard;
+          opacity: 0;
 
           &::selection {
             background: none;
@@ -150,7 +180,7 @@
           }
         }
 
-        button {
+        button#next-button {
           position: absolute;
           border: none;
           border-radius: 12px;
@@ -173,16 +203,17 @@
           &:active {
             transform: scale(0.9);
           }
+
           &:disabled {
             background: $colorCard;
             cursor: not-allowed;
             font-size: 0.9rem;
             box-shadow: none;
+            opacity: 0;
 
             &:hover {
               transform: none;
               color: initial;
-              opacity: 0.6;
               background: $colorCard;
             }
           }
@@ -192,6 +223,49 @@
         margin-top: 45px;
         font-family: $fontOxy;
         font-size: 1.3rem;
+        opacity: 0;
+
+        animation: tracking-in-contract-bck-bottom 1.2s
+          cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s forwards;
+
+        @keyframes tracking-in-contract-bck-bottom {
+          0% {
+            letter-spacing: 1em;
+            transform: translateZ(400px) translateY(300px);
+            opacity: 0.1;
+          }
+          40% {
+            opacity: 0.3;
+          }
+          100% {
+            transform: translateZ(0) translateY(0);
+            opacity: 1;
+          }
+        }
+
+        span {
+          color: $colorB1;
+        }
+
+        span#current-question {
+          animation: currentQuestion 1.5s linear 1.8s forwards;
+
+          @keyframes currentQuestion {
+            to {
+              color: $regularColor3;
+            }
+          }
+        }
+
+        span#total-question {
+          animation: totalQuestion 1.5s linear 1.8s forwards;
+
+          @keyframes totalQuestion {
+            to {
+              color: $regularColor4;
+            }
+          }
+        }
       }
     }
 
@@ -209,14 +283,51 @@
 
       h1 {
         font-size: 2.5rem;
+        opacity: 0;
+
+        animation: tracking-in-expand-fwd-top 1.2s
+          cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s forwards;
+
+        @keyframes tracking-in-expand-fwd-top {
+          0% {
+            letter-spacing: -0.5em;
+            transform: translateZ(-700px) translateY(-500px);
+            opacity: 0.2;
+          }
+          40% {
+            opacity: 0.6;
+          }
+          100% {
+            transform: translateZ(0) translateY(0);
+            opacity: 1;
+          }
+        }
       }
 
       h3 {
         font-size: 1.3rem;
       }
 
-      button {
+      button#end-btn {
         @include regularBtn;
+        opacity: 0;
+        animation: tracking-in-contract-bck-bottom 1.2s
+          cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+
+        @keyframes tracking-in-contract-bck-bottom {
+          0% {
+            letter-spacing: 1em;
+            transform: translateZ(400px) translateY(300px);
+            opacity: 0.1;
+          }
+          40% {
+            opacity: 0.6;
+          }
+          100% {
+            transform: translateZ(0) translateY(0);
+            opacity: 1;
+          }
+        }
 
         &:hover {
           background: $regularColor3;
@@ -228,6 +339,81 @@
           transform: scale(0.9);
         }
       }
+
+      h3#score-quiz {
+        font-size: 1.3rem;
+        opacity: 0;
+
+        animation: text-shadow-drop-br 1s linear 1.5s forwards;
+        @keyframes text-shadow-drop-br {
+          to {
+            text-shadow: 6px 6px 18px rgba(0, 0, 0, 0.35);
+          }
+        }
+
+        span {
+          opacity: 0;
+          animation: text-focus-in 1.7s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+            1.5s forwards;
+
+          @keyframes text-focus-in {
+            0% {
+              filter: blur(12px);
+              opacity: 0.1;
+            }
+            50% {
+              filter: blur(6px);
+              opacity: 0.5;
+            }
+            75% {
+              filter: blur(0px);
+              opacity: 1;
+              color: $regularColor2;
+            }
+            100% {
+              filter: blur(0px);
+              opacity: 1;
+              color: $regularColor3;
+            }
+          }
+        }
+
+        animation: jello-horizontal 0.9s 1.3s both;
+        @keyframes jello-horizontal {
+          0% {
+            transform: scale3d(1, 1, 1);
+            text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+          }
+          30% {
+            transform: scale3d(1.25, 0.75, 1);
+            opacity: 0.2;
+          }
+          40% {
+            transform: scale3d(0.75, 1.25, 1);
+            opacity: 0.4;
+          }
+          50% {
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            transform: scale3d(1.15, 0.85, 1);
+            opacity: 0.7;
+          }
+          65% {
+            text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+            transform: scale3d(0.95, 1.05, 1);
+            opacity: 0.8;
+          }
+          75% {
+            text-shadow: 6px 6px 18px rgba(0, 0, 0, 0.35);
+            transform: scale3d(1.05, 0.95, 1);
+            opacity: 0.8;
+          }
+          100% {
+            text-shadow: 6px 6px 18px rgba(0, 0, 0, 0.35);
+            transform: scale3d(1, 1, 1);
+            opacity: 1;
+          }
+        }
+      }
     }
 
     .quiz-intro {
@@ -236,6 +422,22 @@
       justify-content: space-evenly;
       padding: 60px 50px;
       min-height: 50vh;
+      opacity: 0;
+
+      animation: swing-in-top-fwd 1.2s $easeout 0.2s forwards;
+
+      @keyframes swing-in-top-fwd {
+        0% {
+          transform: rotateX(-100deg);
+          transform-origin: top;
+          opacity: 0.1;
+        }
+        100% {
+          transform: rotateX(0deg);
+          transform-origin: top;
+          opacity: 1;
+        }
+      }
 
       h2 {
         @include regularCard;

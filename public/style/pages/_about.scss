@@ -4,6 +4,7 @@
   box-shadow: $shadowCard;
   padding: 35px 25px;
   gap: 25px;
+  opacity: 0;
 
   .card {
     @include regularCard;
