@@ -142,47 +142,6 @@ header {
     background: url(../img/fdf-img.jpg) center/cover;
   }
 
-  .sidebar {
-    position: fixed;
-    background: $sidebarColor;
-    min-height: 100vh;
-    width: 50%;
-    z-index: 4;
-    right: -60%;
-    transition: all 0.8s $easeout;
-    backdrop-filter: blur(6px);
-
-    ul.sidebar-link {
-      @include colunmContainer;
-      align-items: start;
-      justify-content: space-around;
-      min-height: 30vh;
-
-      li {
-        a {
-          font-family: $fontCav;
-          color: $colorW1;
-          text-transform: capitalize;
-          font-size: 1.3rem;
-          padding: 5px 10px;
-          font-weight: 700;
-          overflow: hidden;
-          transition: $regularTransition;
-
-          &:hover {
-            background: $colorW1;
-            color: $hoverColor3;
-          }
-        }
-      }
-    }
-  }
-
-  .sidebar-active {
-    right: 0%;
-    transition: all 1.2 $easeout;
-  }
-
   .slider {
     max-width: 100vw;
     height: 700px;

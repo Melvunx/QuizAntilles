@@ -3,6 +3,7 @@ footer {
   position: relative;
   justify-content: space-evenly;
   min-height: 15vh;
+  gap: 6px;
 
   &::before {
     position: absolute;
@@ -13,17 +14,53 @@ footer {
     background: $colorB1;
   }
 
+  h2 {
+    font-family: $fontCav;
+    font-size: 2rem;
+  }
+
   .socials {
     @include flexContainer;
     justify-content: space-evenly;
-    width: 40%;
+    width: 50%;
+
+    @media screen and (width <= 605px) {
+      width: 80%;
+    }
 
     li.icon {
       @include colunmContainer;
-      font-size: 1.2rem;
+      transition: $regularTransition;
+      // gap: 5px;
 
-      span {
-        font-size: 1rem;
+      &:hover a{
+        color: $colorW1;
+      }
+
+      &:hover a:last-of-type {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      a:first-of-type {
+        position: relative;
+        z-index: 5;
+        font-size: 1.7rem;
+        transition: $regularTransition;
+      }
+
+      a:last-of-type {
+        transition: $regularTransition;
+        position: relative;
+        z-index: 4;
+        font-size: 1.7rem;
+        font-family: $fontCav;
+        opacity: 0;
+        transform: translateY(-40px);
+
+        @media screen and (width <= 805px) {
+          display: none;
+        }
       }
     }
   }

@@ -154,6 +154,47 @@ main {
   }
 }
 
+.sidebar {
+  position: fixed;
+  background: $sidebarColor;
+  min-height: 100vh;
+  width: 50%;
+  z-index: 4;
+  right: -60%;
+  transition: all 0.8s $easeout;
+  backdrop-filter: blur(6px);
+
+  ul.sidebar-link {
+    @include colunmContainer;
+    align-items: start;
+    justify-content: space-around;
+    min-height: 30vh;
+
+    li {
+      a {
+        font-family: $fontCav;
+        color: $colorW1;
+        text-transform: capitalize;
+        font-size: 1.3rem;
+        padding: 5px 10px;
+        font-weight: 700;
+        overflow: hidden;
+        transition: $regularTransition;
+
+        &:hover {
+          background: $colorW1;
+          color: $hoverColor3;
+        }
+      }
+    }
+  }
+}
+
+.sidebar-active {
+  right: 0%;
+  transition: all 1.2 $easeout;
+}
+
 .scale-in-top {
   animation: scale-in-top 0.8s $easeout $delay forwards;
   @keyframes scale-in-top {
@@ -278,6 +319,36 @@ main {
       transform: scale(1);
       animation-timing-function: ease-out;
       opacity: 1;
+    }
+  }
+}
+
+.roll-in-left {
+  animation: roll-in-left 1s $easeout $delay forwards;
+
+  @keyframes roll-in-left {
+    0% {
+      transform: translateX(-800px) rotate(-540deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+}
+
+.roll-out-left {
+  animation: roll-out-left 1s linear 0.1s forwards;
+
+  @keyframes roll-out-left {
+    0% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-1000px) rotate(-540deg);
+      opacity: 0;
     }
   }
 }
