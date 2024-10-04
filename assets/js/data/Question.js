@@ -27,7 +27,7 @@ class Question {
 export const questions = [
   new Question(
     "unique",
-    "Quel poisson issu des mers froides utilise-t-on pour faire des accras en Martinique",
+    "Quel poisson issu des mers froides utilise-t-on pour faire des accras",
     ["Morue", "Dorade", "Coulirou"],
     "Morue"
   ),
@@ -80,7 +80,7 @@ export const questions = [
 
   new Question(
     "unique",
-    "Qu'est-ce qu'un dombré",
+    "Qu'est-ce qu'un «dombré»",
     [
       "Plat avec des boulettes de viande",
       "Plat avec des boulettes de farine",
@@ -123,7 +123,7 @@ export const questions = [
 
   new Question(
     "unique",
-    "Finissez cette phrase: «Zouk la sé sel ...»",
+    "Finissez cette phrase: «Zouk la sé sèl ...»",
     ["Poivre et Girofle", "Medikamen nou ni", "Rimèd mwen ni"],
     "Medikamen nou ni"
   ),
@@ -162,7 +162,7 @@ export const questions = [
 
   new Question(
     "unique",
-    "Parmis les musiques suivantes laquelle N'est PAS antillaise",
+    "Parmi les musiques suivantes laquelle N'est PAS antillaise",
     ["Raï", "Bouyon", "Jamaïque"],
     "Raï"
   ),
@@ -198,7 +198,7 @@ export const questions = [
   new Question(
     "unique",
     "Qui a écrit «Le Diable dans un thé à la citronnelle»",
-    ["Joé dwet Filé", , "Gary Victor", "Alfred Marie Jeanne"],
+    ["Aimé Césaire", "Gary Victor", "Alfred Marie Jeanne"],
     "Gary Victor"
   ),
 
@@ -239,7 +239,7 @@ export const questions = [
 
   new Question(
     "unique",
-    "Qu'est ce qu'un dowliss",
+    "Qu'est ce qu'un «dowliss»",
     ["Chien", "Esprit maléfique", "Plat de résistance"],
     "Esprit maléfique"
   ),
@@ -250,7 +250,6 @@ export const questions = [
     ["Portugaise", "Pakala", "Allemande", "Bleu"],
     ["Portugaise", "Pakala"]
   ),
-
 
   new Question(
     "multiple",
@@ -275,14 +274,14 @@ export const questions = [
 
   new Question(
     "multiple",
-    "Quels styles musicaux NE sont PAS originaires des antilles",
+    "Quels styles musicaux NE sont PAS originaires des Antilles",
     ["Bigin", "Electro", "Kompa", "Mazurka"],
     ["Mazurka", "Electro"]
   ),
 
   new Question(
     "multiple",
-    "Parmi ces capitales lesquelles N'en sont PAS",
+    "Parmi ces villes, lesquelles Ne sont PAS des capitales",
     ["La Havanne", "Port-au-Prince", "Moule", "Fort-de-France", "Marigot"],
     ["Moule", "Marigot"]
   ),
