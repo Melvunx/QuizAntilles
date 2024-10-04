@@ -774,6 +774,7 @@ main {
   padding: 20px 10px;
   border-radius: 15px;
   overflow: hidden;
+  overflow: visible;
   background: rgba(78, 25, 192, 0.402);
   font-family: "Oxygen";
   color: #fff;
@@ -783,6 +784,92 @@ main {
   text-align: center;
   line-height: 40px;
   opacity: 0;
+}
+.quiz-container #quiz .quiz-content h2#question span {
+  position: absolute;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7px;
+  z-index: 5;
+  left: 0;
+  bottom: -40px;
+  color: #000;
+}
+.quiz-container #quiz .quiz-content h2#question span i {
+  position: relative;
+  z-index: 5;
+  font-size: 1.1rem;
+  -webkit-animation: iconColor 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.2s forwards;
+          animation: iconColor 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.2s forwards;
+}
+@-webkit-keyframes iconColor {
+  to {
+    color: rgb(205, 69, 20);
+  }
+}
+@keyframes iconColor {
+  to {
+    color: rgb(205, 69, 20);
+  }
+}
+.quiz-container #quiz .quiz-content h2#question span p {
+  position: relative;
+  z-index: 4;
+  font-style: italic;
+  font-size: 0.9rem;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-animation: colorWord 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s forwards;
+          animation: colorWord 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s forwards;
+}
+@-webkit-keyframes colorWord {
+  50% {
+    opacity: 1;
+    color: #000;
+  }
+  100% {
+    color: rgb(205, 69, 20);
+    opacity: 1;
+  }
+}
+@keyframes colorWord {
+  50% {
+    opacity: 1;
+    color: #000;
+  }
+  100% {
+    color: rgb(205, 69, 20);
+    opacity: 1;
+  }
+}
+.quiz-container #quiz .quiz-content h2#question span p::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 1.5px;
+  background-color: rgb(205, 69, 20);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-animation: underlineAnim 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.8s forwards;
+          animation: underlineAnim 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.8s forwards;
+  left: 0;
+  bottom: 8px;
+}
+@-webkit-keyframes underlineAnim {
+  to {
+    width: 100%;
+  }
+}
+@keyframes underlineAnim {
+  to {
+    width: 100%;
+  }
 }
 .quiz-container #quiz .quiz-content .choice-container {
   display: -webkit-box;

@@ -38,24 +38,33 @@ const display = {
     // On force le reflow pour permettre à l'animation de se rejouer
     void h2.offsetWidth;
     h2.classList.add("question-anim");
-    this.elementShown(quiz.getCurrentQuestion().text + " ?", "question");
+    let question = quiz.getCurrentQuestion();
+    if (question.type === "multiple") {
+      this.elementShown(
+        `${question.text} ? <span><i class="fa-solid fa-person-chalkboard"></i> <p>Plusieurs choix possibles</p></span> `,
+        "question"
+      );
+    } else if (question.type === "unique") {
+      this.elementShown(`${question.text} ?`, "question");
+    }
   },
 
   choices: function (quiz) {
     //choicesQuestion est un tableau des choix de la question
-    let choicesQuestion = quiz.getCurrentQuestion().choices;
+    let question = quiz.getCurrentQuestion();
+    let choicesQuestion = question.choices;
     const container = document.querySelector(".choice-container");
     container.innerHTML = ""; // Réinitialise le contenu précédent
 
     // On vérifie le type de la question et génère les inputs correspondants
-    if (quiz.getCurrentQuestion().type === "unique") {
+    if (question.type === "unique") {
       choicesQuestion.forEach((choice, index) => {
         container.innerHTML += `
         <input type="radio" name="choice" id="choice${index}" value="${choice}" />
         <label for="choice${index}">${choice}</label>
         `;
       });
-    } else if (quiz.getCurrentQuestion().type === "multiple") {
+    } else if (question.type === "multiple") {
       choicesQuestion.forEach((choice, index) => {
         container.innerHTML += `
         <input type="checkbox" name="choice${index}" id="choice${index}" value="${choice}" />
@@ -81,13 +90,13 @@ const display = {
 
     // Fonction pour activer le bouton "Suivant" si une réponse est sélectionnée
     const checkIfAnswerSelected = () => {
-      if (quiz.getCurrentQuestion().type === "unique") {
+      if (question.type === "unique") {
         const selectedRadio = container.querySelector(
           "input[type='radio']:checked"
         );
         // Si le radio est sélectionné, le selectedRadio devient false donc le bouton est activé
         nextButton.disabled = !selectedRadio;
-      } else if (quiz.getCurrentQuestion().type === "multiple") {
+      } else if (question.type === "multiple") {
         const selectedCheckboxes = container.querySelectorAll(
           "input[type='checkbox']:checked"
         );
@@ -103,13 +112,13 @@ const display = {
     // Gestionnaire pour le bouton "Suivant"
     nextButton.addEventListener("click", () => {
       let userAnswers = [];
-      if (quiz.getCurrentQuestion().type === "unique") {
+      if (question.type === "unique") {
         const selectedRadio = container.querySelector(
           "input[type='radio']:checked"
         );
         //On met dans un tableau les réponses de l'utilisateur
         userAnswers.push(selectedRadio.value);
-      } else if (quiz.getCurrentQuestion().type === "multiple") {
+      } else if (question.type === "multiple") {
         container
           .querySelectorAll("input[type='checkbox']:checked")
           .forEach((checkbox) => {

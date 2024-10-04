@@ -113,6 +113,7 @@
 
       h2#question {
         @include regularCard;
+        overflow: visible;
         background: $hoverColor3;
         font-family: $fontOxy;
         color: $colorW1;
@@ -122,6 +123,71 @@
         text-align: center;
         line-height: 40px;
         opacity: 0;
+
+        span {
+          position: absolute;
+          z-index: 5;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          z-index: 5;
+          left: 0;
+          bottom: -40px;
+          color: $colorB1;
+
+          i {
+            position: relative;
+            z-index: 5;
+            font-size: 1.1rem;
+
+            animation: iconColor 2s $easeout 2.2s forwards;
+
+          @keyframes iconColor {
+            to {
+              color: $regularColor4;
+            }
+          }
+          }
+
+          p {
+            position: relative;
+            z-index: 4;
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: $regularTransition;
+            animation: colorWord 3s $easeout 2s forwards;
+
+            @keyframes colorWord {
+              50% {
+                opacity: 1;
+                color: $colorB1;
+              }
+              100% {
+                color: $regularColor4;
+                opacity: 1;
+              }
+            }
+
+            &::after {
+              position: absolute;
+              content: "";
+              width: 0;
+              height: 1.5px;
+              background-color: $regularColor4;
+              transition: $regularTransition;
+              animation: underlineAnim 2s $easeout 1.8s forwards;
+              left: 0;
+              bottom: 8px;
+
+              @keyframes underlineAnim {
+                to {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
       }
 
       .choice-container {
