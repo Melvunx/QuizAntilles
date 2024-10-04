@@ -671,9 +671,6 @@ main {
 .about .learn-content .left-container a:hover {
   color: lightblue;
 }
-.about .learn-content .left-container a:active {
-  color: rgba(78, 25, 192, 0.402);
-}
 @media screen and (width <= 435px) {
   .about .learn-content .left-container {
     gap: 15px;

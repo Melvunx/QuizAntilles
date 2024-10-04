@@ -103,9 +103,6 @@
           color: $hoverColor1;
         }
 
-        &:active {
-          color: $hoverColor3;
-        }
       }
 
       @media screen and (width <= 435px) {
