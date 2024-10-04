@@ -1,18 +1,29 @@
-.learn-knowledge-container {
+.learn-container {
   @include colunmContainer;
   width: 80%;
   margin: $marginCenter;
   gap: 15px;
   opacity: 0;
-
+  
+  @media screen and (width <= 435px) {
+    width: 100%;
+  }
   .learn-content {
     @include regularCard;
-    grid-template-columns: 30% 70%;
     display: grid;
     box-shadow: $shadowCard;
 
+    @media screen and (max-width: 880px) {
+      display: flex;
+    }
+
+
     .img-container {
       @include imgContainer;
+
+      @media screen and (max-width: 880px) {
+        display: none;
+      }
 
       img {
         width: 90%;
@@ -20,10 +31,9 @@
       }
     }
 
-    .right-content {
+    .side-content {
       @include regularCard;
       @include colunmContainer;
-      gap: 5px;
 
       h4,
       p {
@@ -32,59 +42,70 @@
 
       h4 {
         font-family: $fontCav;
-        font-size: 1.8rem;
+
+        @media screen and (width <= 435px) {
+          width: 90%;
+          line-height: 30px;
+        }
       }
 
       p {
         line-height: 30px;
+
+        @media screen and (width <= 435px) {
+          width: 90%;
+          line-height: 35px;
+        }
       }
     }
   }
 }
 
-.learn-about-container {
-  @include colunmContainer;
-  width: 80%;
-  margin: $marginCenter;
-  gap: 15px;
-  opacity: 0;
-
+.knowledge {
   .learn-content {
-    box-shadow: $shadowCard;
-    @include regularCard;
-    display: grid;
+    grid-template-columns: 30% 70%;
+
+    .right-content {
+      gap: 5px;
+
+      @media screen and (width <= 435px) {
+        gap: 10px;
+      }
+
+      h4 {
+        font-size: 1.8rem;
+        @media screen and (width <= 435px) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+.about {
+  .learn-content {
     grid-template-columns: 70% 30%;
     grid-template-areas: "txt img";
-  }
 
-  .img-container {
-    @include imgContainer;
-    grid-area: img;
-
-    img {
-      width: 90%;
-      border-radius: 12px;
-    }
-  }
-
-  .left-container {
-    @include regularCard;
-    @include colunmContainer;
-    gap: 10px;
-    grid-area: txt;
-
-    h4,
-    p {
-      text-align: center;
+    .img-container {
+      grid-area: img;
     }
 
-    h4 {
-      font-family: $fontCav;
-      font-size: 2.3rem;
-    }
+    .left-container {
+      gap: 10px;
+      grid-area: txt;
 
-    p {
-      line-height: 30px;
+      @media screen and (width <= 435px) {
+        gap: 15px;
+      }
+
+      h4 {
+        font-size: 2.3rem;
+
+        @media screen and (width <= 435px) {
+          font-size: 2rem;
+        }
+      }
     }
   }
 }

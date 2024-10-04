@@ -1,6 +1,6 @@
 const nav = document.querySelector("nav");
-const cardHomeUp = document.querySelector(".learn-knowledge-container");
-const cardHomeDown = document.querySelector(".learn-about-container");
+const cardHomeUp = document.querySelector(".knowledge");
+const cardHomeDown = document.querySelector(".about");
 const cardAbout = document.querySelector(".card-container");
 
 let lastScroll = 30;

@@ -10,18 +10,20 @@ nav {
   z-index: 3;
 
   @media screen and (max-width: 520px) {
-    @include flexContainer;
+    padding: 25px 15px;
   }
 
   button#sidebutton {
+    position: absolute;
     display: none;
     font-size: 1.4rem;
     color: $colorW1;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50%;
+    z-index: 5;
     transition: $regularTransition;
 
     &:hover {
@@ -34,7 +36,6 @@ nav {
     }
 
     @media screen and (max-width: 520px) {
-      position: absolute;
       display: block;
       right: 5%;
       top: 50%;
@@ -92,7 +93,7 @@ nav {
     justify-content: space-around;
     gap: 15px;
 
-    @media screen and (max-width: 520px) {
+    @media screen and (width <= 520px) {
       display: none;
     }
 
@@ -129,30 +130,57 @@ header {
     background: $colorB1;
     left: 50%;
     transform: translateX(-50%);
+    display: none;
 
-    @media screen and (max-width: 805px) {
-      display: none;
+    @media screen and (805px <= width <= 1400px) {
+      display: block;
     }
   }
 
   @media screen and (max-width: 805px) {
-    min-height: 80vh;
+    min-height: 60vh;
     background: url(../img/fdf-img.jpg) center/cover;
   }
 
   .sidebar {
-    position: absolute;
+    position: fixed;
     background: $sidebarColor;
     min-height: 100vh;
     width: 50%;
     z-index: 4;
-    right: -50%;
-    transition: $regularTransition;
+    right: -60%;
+    transition: all 0.8s $easeout;
+    backdrop-filter: blur(6px);
+
+    ul.sidebar-link {
+      @include colunmContainer;
+      align-items: start;
+      justify-content: space-around;
+      min-height: 30vh;
+
+      li {
+        a {
+          font-family: $fontCav;
+          color: $colorW1;
+          text-transform: capitalize;
+          font-size: 1.3rem;
+          padding: 5px 10px;
+          font-weight: 700;
+          overflow: hidden;
+          transition: $regularTransition;
+
+          &:hover {
+            background: $colorW1;
+            color: $hoverColor3;
+          }
+        }
+      }
+    }
   }
 
   .sidebar-active {
-    right: 0;
-    transition: $regularTransition;
+    right: 0%;
+    transition: all 1.2 $easeout;
   }
 
   .slider {
@@ -166,7 +194,7 @@ header {
     }
 
     @media screen and (max-width: 1105px) {
-      height: 450px;
+      height: 410px;
     }
 
     @media screen and (max-width: 805px) {
@@ -259,6 +287,11 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: $regularTransition;
+
+    @media screen and (width <= 435px) {
+      width: 85%;
+    }
 
     .header-content {
       @include colunmContainer;

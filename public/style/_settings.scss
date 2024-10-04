@@ -144,6 +144,14 @@ main {
   width: 80%;
   margin: $marginCenter;
   padding: 30px 0;
+
+  @media screen and (max-width: 830px) {
+    min-height: 75vh;
+  }
+
+  @media screen and (width <= 435px) {
+    width: 93%;
+  }
 }
 
 .scale-in-top {
