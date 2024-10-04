@@ -4,7 +4,7 @@
   margin: $marginCenter;
   gap: 15px;
   opacity: 0;
-  
+
   @media screen and (width <= 435px) {
     width: 100%;
   }
@@ -16,7 +16,6 @@
     @media screen and (max-width: 880px) {
       display: flex;
     }
-
 
     .img-container {
       @include imgContainer;
@@ -94,6 +93,20 @@
     .left-container {
       gap: 10px;
       grid-area: txt;
+
+      a {
+        font-style: italic;
+        color: $regularColor4;
+        transition: $regularTransition;
+
+        &:hover {
+          color: $hoverColor1;
+        }
+
+        &:active {
+          color: $hoverColor3;
+        }
+      }
 
       @media screen and (width <= 435px) {
         gap: 15px;
