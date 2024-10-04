@@ -164,11 +164,26 @@ main {
   transition: all 0.8s $easeout;
   backdrop-filter: blur(6px);
 
+  button#closeSidebar {
+    position: absolute;
+    border: none;
+    background: none;
+    top: 0.5%;
+    left: 2%;
+    font-size: 1rem;
+    transition: $regularTransition;
+
+    &:hover {
+      color: orangered;
+    }
+  }
+
   ul.sidebar-link {
     @include colunmContainer;
     align-items: start;
     justify-content: space-around;
     min-height: 30vh;
+    margin-top: 10px;
 
     li {
       a {

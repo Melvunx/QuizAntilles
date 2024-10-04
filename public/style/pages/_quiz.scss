@@ -3,10 +3,15 @@
   min-height: 90vh;
 
   #quiz {
-    @include flexContainer;
+    margin: $marginCenter;
+    width: 80%;
     transform: $regularTransition;
     min-height: 50vh;
     border-radius: 15px;
+
+    @media screen and (width <= 605px) {
+      width: 95%;
+    }
 
     .start-page {
       backdrop-filter: blur(2px);
@@ -15,9 +20,12 @@
       padding: 55px 45px;
       justify-content: space-evenly;
       min-height: 50vh;
-      min-width: 800px;
       opacity: 0;
       animation: swing-in-top-fwd 0.7s $easeout $delay forwards;
+
+      @media screen and (width <= 450px) {
+        gap: 30px;
+      }
 
       @keyframes swing-in-top-fwd {
         0% {
@@ -40,20 +48,53 @@
       h1 {
         @include regularCard;
         backdrop-filter: blur(1px);
+
+        @media screen and (width <= 675px) {
+          font-size: 1.3rem;
+          text-align: center;
+        }
       }
 
       h3 {
         letter-spacing: 1px;
         font-size: 1.3rem;
+
+        @media screen and (width <= 895px) {
+          font-size: 1.1rem;
+          text-align: center;
+          line-height: 30px;
+        }
+
+        @media screen and (width <= 675px) {
+          font-size: 0.9rem;
+        }
       }
 
       .quiz-option {
         @include colunmContainer;
         gap: 15px;
 
+        @media screen and (width <= 530px) {
+          flex-direction: row;
+          justify-content: space-around;
+          width: 100%;
+        }
+
         button {
           @include regularBtn;
           color: $colorW1;
+
+          @media screen and (width <= 595px) {
+            font-size: 0.85rem;
+            text-align: center;
+            line-height: 30px;
+          }
+
+          span {
+            @media screen and (width <= 530px) {
+              display: none;
+            }
+          }
 
           &:first-of-type {
             background: $regularColor3;
@@ -94,7 +135,6 @@
       position: relative;
       justify-content: space-evenly;
       min-height: 55vh;
-      min-width: 1000px;
       display: none;
       gap: 5px;
       animation: rotate-in-center 0.6s $easeout 0.5s forwards;
@@ -124,6 +164,21 @@
         line-height: 40px;
         opacity: 0;
 
+        @media screen and (width <= 960px) {
+          font-size: 1.4rem;
+          padding: 8px 4px;
+        }
+
+        @media screen and (width <= 760px) {
+          font-size: 1.3rem;
+          padding: 6px 3px;
+          width: 90%;
+        }
+
+        @media screen and (width <= 505px) {
+          margin-bottom: 30px;
+        }
+
         span {
           position: absolute;
           z-index: 5;
@@ -135,6 +190,13 @@
           bottom: -40px;
           color: $colorB1;
 
+          @media screen and (width <= 505px) {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            justify-content: center;
+          }
+
           i {
             position: relative;
             z-index: 5;
@@ -142,11 +204,11 @@
 
             animation: iconColor 2s $easeout 2.2s forwards;
 
-          @keyframes iconColor {
-            to {
-              color: $regularColor4;
+            @keyframes iconColor {
+              to {
+                color: $regularColor4;
+              }
             }
-          }
           }
 
           p {
@@ -195,7 +257,17 @@
         justify-content: space-evenly;
         width: 90%;
         gap: 10px;
-        margin-bottom: 40px;
+        margin-bottom: 5px;
+
+        @media screen and (width <= 605px) {
+          width: 100%;
+          margin-bottom: 0;
+        }
+
+        @media screen and (width <= 505px) {
+          flex-direction: column;
+          gap: 15px;
+        }
 
         input[type="radio"],
         input[type="checkbox"] {
@@ -232,6 +304,20 @@
           background: $colorCard;
           opacity: 0;
 
+          @media screen and (width <= 760px) {
+            font-size: 0.9rem;
+            line-height: 25px;
+            padding: 3px;
+          }
+
+          @media screen and (width <= 605px) {
+            width: 30%;
+          }
+
+          @media screen and (width <= 505px) {
+            width: 50%;
+          }
+
           &::selection {
             background: none;
           }
@@ -259,6 +345,11 @@
           font-weight: 600;
           letter-spacing: 1px;
           box-shadow: $shadowCard;
+
+          @media screen and (width <= 505px) {
+            position: static;
+            margin-top: 10px;
+          }
 
           &:hover {
             background: $regularColor3;
@@ -290,6 +381,10 @@
         font-family: $fontOxy;
         font-size: 1.3rem;
         opacity: 0;
+
+        @media screen and (width <= 505px) {
+          margin-top: 0;
+        }
 
         animation: tracking-in-contract-bck-bottom 1.2s
           cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s forwards;
@@ -351,6 +446,10 @@
         font-size: 2.5rem;
         opacity: 0;
 
+        @media screen and (width <= 425px) {
+          font-size: 2rem;
+        }
+
         animation: tracking-in-expand-fwd-top 1.2s
           cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s forwards;
 
@@ -370,8 +469,13 @@
         }
       }
 
-      h3 {
+      h3#score-quiz {
         font-size: 1.3rem;
+        text-align: center;
+
+        @media screen and (width <= 420px) {
+          font-size: 1.1rem;
+        }
       }
 
       button#end-btn {
@@ -509,6 +613,12 @@
         @include regularCard;
         font-size: 2.5rem;
         font-family: $fontOxy;
+
+        @media screen and (width <= 880px) {
+          font-size: 1.6rem;
+          text-align: center;
+          line-height: 35px;
+        }
       }
 
       .level-btn {
@@ -516,8 +626,17 @@
         justify-content: space-evenly;
         width: 80%;
 
+        @media screen and (width <= 465px) {
+          width: 100%;
+        }
+
         button {
           @include regularBtn;
+
+          @media screen and (width <= 465px) {
+            font-size: 0.9rem;
+            padding: 6px;
+          }
 
           &:hover {
             transform: scale(1.1);
